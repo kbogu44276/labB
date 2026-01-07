@@ -103,8 +103,7 @@ class Todo {
 
             const content = document.createElement("div");
             content.className = "task-content";
-            //content.innerHTML = this.highlight(task.text);
-            content.textContent = task.text;
+            content.innerHTML = this.highlight(task.text);
 
             if (task.date) {
                 const d = document.createElement("span");
@@ -135,14 +134,14 @@ class Todo {
     editTask(realIndex, li) {
         const task = this.tasks[realIndex];
 
-        // Jeżeli już edytujemy ten sam wiersz, nie rób nic
+        // Jeżeli już edytujemy ten sam wiersz, return
         if (li.dataset.editing === "1") return;
         li.dataset.editing = "1";
 
         // Zapamiętaj poprzednią zawartość, gdyby trzeba było przywrócić
         const oldHtml = li.innerHTML;
 
-        // Czyścimy TYLKO ten jeden li (nie całą listę!)
+        // Czyścimy TYLKO ten jeden li a nie całą listę
         li.innerHTML = "";
 
         const input = document.createElement("input");
@@ -202,4 +201,5 @@ document.getElementById("addBtn").addEventListener("click", () => {
 document.getElementById("search").addEventListener("input", (e) => {
     todo.term = e.target.value;
     todo.draw();
+
 });
