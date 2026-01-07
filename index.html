@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO – LAB B</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; }
+        input, button { padding: 6px; margin: 4px 0; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 6px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .highlight { background-color: yellow; }
+        .task-content { flex-grow: 1; cursor: pointer; }
+        .date { font-size: 0.8em; color: gray; margin-left: 6px; }
+    </style>
+</head>
+<body>
+
+<h2>Lista TODO</h2>
+
+<input type="text" id="search" placeholder="Szukaj..." />
+
+<ul id="taskList"></ul>
+
+<hr>
+
+<input type="text" id="newTask" placeholder="Nowe zadanie" />
+<input type="date" id="newDate" />
+<button id="addBtn">Dodaj</button>
+
+<script src="script.js"></script>
+</body>
+</html>
